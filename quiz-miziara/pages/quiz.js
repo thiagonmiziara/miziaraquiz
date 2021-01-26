@@ -1,4 +1,3 @@
-import db from "../db.json";
 import QuizBackground from "../src/components/QuizBackground";
 import GitHubCorner from "../src/components/GitHubCorner";
 import Widget from "../src/components/Widget";
@@ -8,18 +7,16 @@ import Footer from "../src/components/Footer";
 
 export default function QuizPage() {
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <QuizBackground backgroundImage="https://images.alphacoders.com/992/992782.jpg">
       <QuizContainer>
-      <QuizLogo/>
+        <QuizLogo />
         <Widget>
           <Widget.Header>Página em Construção </Widget.Header>
           <Widget.Content>
-            <p> Conteúdo em breve... </p>{" "}
-            
-                      
+            <p> Conteúdo em breve... </p>
           </Widget.Content>
         </Widget>
-        <Footer/>
+        <Footer />
       </QuizContainer>
       <GitHubCorner />
     </QuizBackground>
