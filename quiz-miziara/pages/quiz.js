@@ -6,7 +6,7 @@ import QuizContainer from "../src/components/QuizContainer";
 import QuizLogo from "../src/components/QuizLogo";
 import Footer from "../src/components/Footer";
 
-export default function Quiz() {
+export default function QuizPage() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
@@ -15,20 +15,8 @@ export default function Quiz() {
           <Widget.Header>Página em Construção </Widget.Header>
           <Widget.Content>
             <p> Conteúdo em breve... </p>{" "}
-            <br/>
-            <a
-              href="/"
-              style={{
-                textDecoration: "none",
-                padding: "20px",
-                color: "#fff",
-                backgroundColor: `${db.theme.colors.primary}`
-                ,marginTop: '10px',
-                borderRadius: `${db.theme.borderRadius}`
-              }}
-            >
-              Voltar Home
-            </a>
+            
+                      
           </Widget.Content>
         </Widget>
         <Footer/>

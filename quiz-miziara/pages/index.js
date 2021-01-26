@@ -1,22 +1,45 @@
 import db from "../db.json";
 import Widget from "../src/components/Widget";
-import Footer from "../src/components/Footer";
+import QuizLogo from "../src/components/QuizLogo";
 import GitHubCorner from "../src/components/GitHubCorner";
 import QuizBackground from "../src/components/QuizBackground";
-import QuizLogo from "../src/components/QuizLogo";
 import QuizContainer from "../src/components/QuizContainer";
+import Footer from "../src/components/Footer";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState("");
+
+  function formSubmit(event) {
+    event.preventDefault();
+    router.push(`/quiz?name=${name}`);
+  }
+
+  function handleInput({ target }) {
+    setName(target.value);
+  }
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
-      <QuizLogo />
+        <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1> Miziara Quiz! </h1>
+            <h1>Batman Quiz!</h1>
           </Widget.Header>
           <Widget.Content>
-            <p> Quiz de games esta preparado? </p>
+            <p> Quiz do Batman esta preparado? </p>
+            <form onSubmit={formSubmit}>
+              <input
+                onChange={handleInput}
+                type="text"
+                placeholder="Nome do Jogador"
+              />
+              <button type="submit" disabled={name.length === 0}>
+                Jogar {name}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
         <Widget>
@@ -25,20 +48,6 @@ export default function Home() {
           </Widget.Header>
           <Widget.Content>
             <p> Links dos melhores Quiz para desafiar sua mente! </p>
-            <br />
-            <a
-              href="/quiz"
-              style={{
-                textDecoration: "none",
-                padding: "20px",
-                color: "#fff",
-                backgroundColor: `${db.theme.colors.primary}`,
-                marginTop: "10px",
-                borderRadius: `${db.theme.borderRadius}`,
-              }}
-            >
-              Quiz Page
-            </a>
           </Widget.Content>
         </Widget>
         <Footer />
