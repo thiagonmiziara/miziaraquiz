@@ -9,8 +9,8 @@ import QuizContainer from "../src/components/QuizContainer";
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <QuizLogo />
       <QuizContainer>
+      <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1> Miziara Quiz! </h1>

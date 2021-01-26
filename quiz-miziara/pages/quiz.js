@@ -3,11 +3,14 @@ import QuizBackground from "../src/components/QuizBackground";
 import GitHubCorner from "../src/components/GitHubCorner";
 import Widget from "../src/components/Widget";
 import QuizContainer from "../src/components/QuizContainer";
+import QuizLogo from "../src/components/QuizLogo";
+import Footer from "../src/components/Footer";
 
 export default function Quiz() {
   return (
-    <QuizBackground backgroundImage="https://i.pinimg.com/originals/44/f9/a3/44f9a3bd5e9952bfa916f1d12e3482b8.jpg">
+    <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
+      <QuizLogo/>
         <Widget>
           <Widget.Header>Página em Construção </Widget.Header>
           <Widget.Content>
@@ -28,6 +31,7 @@ export default function Quiz() {
             </a>
           </Widget.Content>
         </Widget>
+        <Footer/>
       </QuizContainer>
       <GitHubCorner />
     </QuizBackground>
