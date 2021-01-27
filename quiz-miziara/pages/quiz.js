@@ -1,83 +1,124 @@
-import QuizLogo from "../src/components/QuizLogo";
-import QuizContainer from "../src/components/QuizContainer";
-import QuizBackground from "../src/components/QuizBackground";
-import GitHubCorner from "../src/components/GitHubCorner";
-import Widget from "../src/components/Widget";
-import Footer from "../src/components/Footer";
+import React from "react";
 import db from "../db.json";
+import Widget from "../src/components/Widget";
+import QuizLogo from "../src/components/QuizLogo";
+import QuizBackground from "../src/components/QuizBackground";
+import QuizContainer from "../src/components/QuizContainer";
 import Button from "../src/components/Button";
-import Input from "../src/components/Input";
 
-const LoadingWidget = () => {
+function LoadingWidget() {
   return (
     <Widget>
-      <Widget.Header>Carregando...</Widget.Header>
+      <Widget.Header>
+        <h1>Carregando</h1>
+      </Widget.Header>
 
-      <Widget.Content>[Desafio do Loading]</Widget.Content>
+      <Widget.Content>
+        <img
+          style={{ width: "100%", height: "50%" }}
+          src="https://phoneky.co.uk/thumbs/screensavers/down/animals/batmanload_t4q67539.gif"
+          alt="loading gif"
+        />
+      </Widget.Content>
     </Widget>
   );
-};
+}
 
-const QuestionWidget = ({ question, totalQuestions, questionIndex }) => {
-
-  const questionId =  `question__${questionIndex}`
+function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
+  const questionId = `question__${questionIndex}`;
   return (
     <Widget>
       <Widget.Header>
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
       </Widget.Header>
+
       <img
+        alt="Descrição"
+        style={{
+          width: "100%",
+          height: "150px",
+          objectFit: "cover",
+        }}
         src={question.image}
-        alt="Descriçao"
-        style={{ width: "100%", height: "150px", objectFit: "cover" }}
       />
       <Widget.Content>
         <h2>{question.title}</h2>
-        <p> {question.description} </p>
-        <form>
+        <p>{question.description}</p>
+
+        <form
+          onSubmit={(infosDoEvento) => {
+            infosDoEvento.preventDefault();
+            onSubmit();
+          }}
+        >
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative__${alternativeIndex}`;
             return (
-              <Widget.Topic as="label" htmlFor={alternativeId}>
-                <input 
-                name={questionId}
-                id={alternativeId}
-                type="radio"
-                />
+              <Widget.Topic
+                as="label"
+                htmlFor={alternativeId}
+                key={alternativeIndex}
+              >
+                <input id={alternativeId} name={questionId} type="radio" />
                 {alternative}
               </Widget.Topic>
             );
           })}
+
+          <Button type="submit">Confirmar</Button>
         </form>
-        <Button>Confirmar</Button>
       </Widget.Content>
     </Widget>
   );
-};
+}
 
-const QuizPage = () => {
-  const screenState = 'Loading';
+const screenStates = {
+  QUIZ: "QUIZ",
+  LOADING: "LOADING",
+  RESULT: "RESULT",
+};
+export default function QuizPage() {
+  const [screenState, setScreenState] = React.useState(screenStates.LOADING);
+  const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const totalQuestions = db.questions.length;
-  const questionIndex = 0;
+  const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
 
+  React.useEffect(() => {
+    // fetch()..
+    setTimeout(() => {
+      setScreenState(screenStates.QUIZ);
+    }, 1 * 1000);
+  }, []);
+
+  function handleSubmitQuiz() {
+    const nextQuestion = questionIndex + 1;
+    if (nextQuestion < totalQuestions) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      setScreenState(screenStates.RESULT);
+    }
+  }
+
   return (
-    <QuizBackground backgroundImage="https://images.alphacoders.com/992/992782.jpg">
+    <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
+        {screenState === screenStates.QUIZ && (
+          <QuestionWidget
+            question={question}
+            questionIndex={questionIndex}
+            totalQuestions={totalQuestions}
+            onSubmit={handleSubmitQuiz}
+          />
+        )}
 
-       {/* <QuestionWidget
-          question={question}
-          totalQuestions={totalQuestions}
-          questionIndex={questionIndex}
-       />*/}
+        {screenState === screenStates.LOADING && <LoadingWidget />}
 
-        {screenState === 'Loading' && <LoadingWidget />}
-        <Footer />
+        {screenState === screenStates.RESULT && (
+          <div>Você acertou X questões, parabéns!</div>
+        )}
       </QuizContainer>
-      <GitHubCorner />
     </QuizBackground>
   );
-};
-
-export default QuizPage;
+}
