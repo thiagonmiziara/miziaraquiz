@@ -10,7 +10,7 @@ function LoadingWidget() {
   return (
     <Widget>
       <Widget.Header>
-        <h1>Carregando</h1>
+        <h1>Batman Quiz!</h1>
       </Widget.Header>
 
       <Widget.Content>
