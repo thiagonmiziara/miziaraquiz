@@ -3,27 +3,128 @@
     "title": "Miziara Quiz",
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [{
-            "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-            "title": "Como fazer um seletor por id via CSS?",
-            "description": "Essa é pra aquecer",
+            "image": "https://media2.giphy.com/media/BnK7qt0oUl5zq/giphy.gif",
+            "title": "Qual e o nome do Batman ?",
+            "description": "Será que você é realmente um Fã",
             "answer": 2,
             "alternatives": [
-                ".elemento",
-                "*elemento",
-                "#elemento",
-                "%elemento"
+                "James Gordon",
+                "Bruce Wayne",
+                "Alfred",
+                "Batman"
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-            "title": "Como fazer um background gradiente com css?",
-            "description": "Faz tempo em haha",
+            "image": "https://2.bp.blogspot.com/-dacVSVoUno4/VQ9Kl4Wv4rI/AAAAAAAAOmw/TKe2CxZxPMs/s1600/Batman%2B6.gif",
+            "title": "Qual e o nome do Mordomo do Batman ?",
+            "description": "Será que você é realmente um Fã",
             "answer": 0,
             "alternatives": [
-                "background: linear-gradient(#e66465, #9198e5);",
-                "background: gradient(#e66465, #9198e5);"
+                "Gordon",
+                "Alfred",
+                "Alura",
+                "Mario Souto"
+            ]
+        },
+
+        {
+            "image": "https://31.media.tumblr.com/6476c6f6022969a03c8a4af826b93c12/tumblr_n7a76mEc9a1rbijdfo4_r1_500.gif",
+            "title": "Qual e o nome do principal vilao do Batman ?",
+            "description": "Será que você é realmente um Fã",
+            "answer": 0,
+            "alternatives": [
+                "Coringa",
+                "Bane",
+                "Charada",
+                "Pinguim"
+            ]
+        },
+        {
+            "image": "https://33.media.tumblr.com/9cccff6dc8a743fccd8370f328cc9349/tumblr_nmz5yfT7or1sna39no1_500.gif",
+            "title": "Qual e o nome do parceiro do Batman ?",
+            "description": "Será que você é realmente um Fã",
+            "answer": 0,
+            "alternatives": [
+                "Asa Noturna",
+                "Paulo Silveira",
+                "Robin",
+                "Juliana Amoasei"
+            ]
+        },
+        {
+            "image": "https://media4.giphy.com/media/GE3IhznTAfHSo/giphy.gif",
+            "title": "Quem e o rival do Batman ?",
+            "description": "Será que você é realmente um Fã",
+            "answer": 0,
+            "alternatives": [
+                "Superman",
+                "Aquaman",
+                "Flash",
+                "Asa Noturna"
+            ]
+        },
+        {
+            "image": "https://i.gifer.com/origin/97/97ffc92b43f4b125435da265b00187e5_w200.gif",
+            "title": "Qual e o nome do ator que fez a triologia de Cavaleiro das Trevas ?",
+            "description": "Será que você é realmente um Fã",
+            "answer": 0,
+            "alternatives": [
+                "Michael Keaton",
+                "George Clooney",
+                "Christian Bale",
+                "Ben Affleck"
+            ]
+        },
+        {
+            "image": "https://2.bp.blogspot.com/-bapbwx-mU3s/VQ9KcoDB_NI/AAAAAAAAOlk/jN4s0gfYv1Q/s280/Batman%2B12.gif",
+            "title": "Qual é Terra Natal do Bruce Wayne?",
+            "description": "Será que você é realmente um Fã",
+            "answer": 0,
+            "alternatives": [
+                "Star City",
+                "Gotham City",
+                "Central City",
+                "UberLândia City"
+            ]
+        },
+        {
+            "image": "https://www.acasadocogumelo.com/wp-content/uploads/2013/09/tumblr_mr5gghgKz31r7cwf3o1_500.gif",
+            "title": "Qual foi sua Primeira aparição?",
+            "description": "Será que você é realmente um Fã",
+            "answer": 0,
+            "alternatives": [
+                "Detective Comics #11",
+                "Detective Comics #29",
+                "Detective Comics #01",
+                "Detective Comics #27"
+            ]
+        },
+        {
+            "image": "https://media.tenor.com/images/24a81c6b4a59269350112f76a4744acd/tenor.gif",
+            "title": "Qual Editora do Batman?",
+            "description": "Será que você é realmente um Fã",
+            "answer": 0,
+            "alternatives": [
+                "Dc Comics",
+                "Dc Marvel",
+                "Dc Comics Start",
+                "Detective Comics"
+            ]
+        },
+        {
+            "image": "https://3.bp.blogspot.com/-kOEmbGeO_oU/VQ9Kp3ZaJgI/AAAAAAAAOnM/oy_IxJ-g7tM/s280/Batman%2B8.gif",
+            "title": "O Batman da Era de Prata apareceu pela primeira vez em meados da década de...",
+            "description": "Será que você é realmente um Fã",
+            "answer": 0,
+            "alternatives": [
+                "1934",
+                "1960",
+                "1950",
+                "1987"
             ]
         }
+
+
     ],
     "external": [
         ""

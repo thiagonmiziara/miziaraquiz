@@ -10,6 +10,7 @@ import Footer from "../src/components/Footer";
 import Input from "../src/components/Input";
 import Button from "../src/components/Button";
 
+
 export default function Home() {
   const router = useRouter();
   const [name, setName] = React.useState("");
@@ -27,6 +28,7 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
+       
         <Widget>
           <Widget.Header>
             <h1>Batman Quiz!</h1>
