@@ -5,6 +5,7 @@ import QuizLogo from "../src/components/QuizLogo";
 import QuizBackground from "../src/components/QuizBackground";
 import QuizContainer from "../src/components/QuizContainer";
 import Button from "../src/components/Button";
+import AlternativesForm from "../src/components/AlternativesForm";
 
 function ResultWidget({ results }) {
   return (
@@ -86,7 +87,7 @@ function QuestionWidget({
       />
       <Widget.Content>
         <h2> {question.title} </h2> <p> {question.description} </p>
-        <form
+        <AlternativesForm
           onSubmit={(infosDoEvento) => {
             infosDoEvento.preventDefault();
             setIsQuestionSubmited(true);
@@ -100,14 +101,18 @@ function QuestionWidget({
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative__${alternativeIndex}`;
+            const selectedAlternativeStatus = isCorrect ? "SUCCESS" : "ERROR";
+            const isSelected = selectedAlternative === alternativeIndex;
             return (
               <Widget.Topic
                 as="label"
                 key={alternativeId}
                 htmlFor={alternativeId}
+                data-selected={isSelected}
+                data-status={isQuestionSubmited && selectedAlternativeStatus}
               >
                 <input
-                  style={{display: 'none'}}
+                  style={{ display: "none" }}
                   id={alternativeId}
                   name={questionId}
                   onChange={() => setSelectedAlternative(alternativeIndex)}
@@ -123,7 +128,7 @@ function QuestionWidget({
           </Button>
           {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
           {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
-        </form>
+        </AlternativesForm>
       </Widget.Content>
     </Widget>
   );
@@ -164,7 +169,7 @@ export default function QuizPage() {
   }
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <QuizBackground backgroundImage={"https://cdn.wallpapersafari.com/65/15/XJmMES.jpg"}>
       <QuizContainer>
         <QuizLogo />
         {screenState === screenStates.QUIZ && (
