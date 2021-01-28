@@ -6,7 +6,7 @@
             "image": "https://media2.giphy.com/media/BnK7qt0oUl5zq/giphy.gif",
             "title": "Qual e o nome do Batman ?",
             "description": "Será que você é realmente um Fã",
-            "answer": 2,
+            "answer": 1,
             "alternatives": [
                 "James Gordon",
                 "Bruce Wayne",
@@ -18,7 +18,7 @@
             "image": "https://2.bp.blogspot.com/-dacVSVoUno4/VQ9Kl4Wv4rI/AAAAAAAAOmw/TKe2CxZxPMs/s1600/Batman%2B6.gif",
             "title": "Qual e o nome do Mordomo do Batman ?",
             "description": "Será que você é realmente um Fã",
-            "answer": 0,
+            "answer": 1,
             "alternatives": [
                 "Gordon",
                 "Alfred",
@@ -43,7 +43,7 @@
             "image": "https://33.media.tumblr.com/9cccff6dc8a743fccd8370f328cc9349/tumblr_nmz5yfT7or1sna39no1_500.gif",
             "title": "Qual e o nome do parceiro do Batman ?",
             "description": "Será que você é realmente um Fã",
-            "answer": 0,
+            "answer": 2,
             "alternatives": [
                 "Asa Noturna",
                 "Paulo Silveira",
@@ -67,7 +67,7 @@
             "image": "https://i.gifer.com/origin/97/97ffc92b43f4b125435da265b00187e5_w200.gif",
             "title": "Qual e o nome do ator que fez a triologia de Cavaleiro das Trevas ?",
             "description": "Será que você é realmente um Fã",
-            "answer": 0,
+            "answer": 2,
             "alternatives": [
                 "Michael Keaton",
                 "George Clooney",
@@ -79,7 +79,7 @@
             "image": "https://2.bp.blogspot.com/-bapbwx-mU3s/VQ9KcoDB_NI/AAAAAAAAOlk/jN4s0gfYv1Q/s280/Batman%2B12.gif",
             "title": "Qual é Terra Natal do Bruce Wayne?",
             "description": "Será que você é realmente um Fã",
-            "answer": 0,
+            "answer": 1,
             "alternatives": [
                 "Star City",
                 "Gotham City",
@@ -91,7 +91,7 @@
             "image": "https://www.acasadocogumelo.com/wp-content/uploads/2013/09/tumblr_mr5gghgKz31r7cwf3o1_500.gif",
             "title": "Qual foi sua Primeira aparição?",
             "description": "Será que você é realmente um Fã",
-            "answer": 0,
+            "answer": 3,
             "alternatives": [
                 "Detective Comics #11",
                 "Detective Comics #29",
@@ -115,7 +115,7 @@
             "image": "https://3.bp.blogspot.com/-kOEmbGeO_oU/VQ9Kp3ZaJgI/AAAAAAAAOnM/oy_IxJ-g7tM/s280/Batman%2B8.gif",
             "title": "O Batman da Era de Prata apareceu pela primeira vez em meados da década de...",
             "description": "Será que você é realmente um Fã",
-            "answer": 0,
+            "answer": 2,
             "alternatives": [
                 "1934",
                 "1960",
