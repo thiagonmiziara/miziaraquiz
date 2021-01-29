@@ -1,4 +1,5 @@
 import React from "react";
+import db from "../../../db.json";
 import Widget from "../../components/Widget";
 import QuizLogo from "../../components/QuizLogo";
 import QuizBackground from "../../components/QuizBackground";
@@ -177,7 +178,7 @@ export default function QuizPage({ externalQuestions, externalBg }) {
   }
 
   React.useEffect(() => {
-    // fetch()..
+    
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
     }, 1 * 1500);
@@ -197,15 +198,7 @@ export default function QuizPage({ externalQuestions, externalBg }) {
       <QuizContainer>
         <QuizLogo
           src={db.logo}
-          as={motion.img}
-          initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1.1 }}
-          transition={{
-            delay: 0.2,
-            type: "spring",
-            stiffness: 260,
-            damping: 20,
-          }}
+        
         />
         {screenState === screenStates.QUIZ && (
           <QuestionWidget
