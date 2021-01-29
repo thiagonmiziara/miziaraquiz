@@ -27,6 +27,7 @@ export default function Home() {
 
   return (
     <QuizBackground backgroundImage={db.bg}>
+      
       <QuizContainer>
         <QuizLogo src={db.logo} as={motion.img} 
        
@@ -40,6 +41,7 @@ export default function Home() {
           
         }}
         />
+        
           
         <Widget
           as={motion.section}
