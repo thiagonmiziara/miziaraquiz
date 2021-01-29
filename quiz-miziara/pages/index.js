@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import db from "../db.json";
 import Widget from "../src/components/Widget";
 import QuizLogo from "../src/components/QuizLogo";
@@ -9,6 +10,7 @@ import QuizContainer from "../src/components/QuizContainer";
 import Footer from "../src/components/Footer";
 import Input from "../src/components/Input";
 import Button from "../src/components/Button";
+import Link from "../src/components/Link";
 
 export default function Home() {
   const router = useRouter();
@@ -26,9 +28,29 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
-        <QuizLogo />
-
-        <Widget>
+        <QuizLogo src={db.logo} as={motion.img} 
+       
+          initial={{ scale: 0 }}
+          animate={{ rotate: 360, scale: 1.1 }}
+          transition={{
+            delay: .2,
+            type: "spring",
+            stiffness: 260,
+            damping: 20
+          
+        }}
+        />
+          
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, x: "0" },
+            hidden: { opacity: 0, x: "100%" },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Header>
             <h1>Batman Quiz!</h1>
           </Widget.Header>
@@ -48,21 +70,33 @@ export default function Home() {
             </form>
           </Widget.Content>
         </Widget>
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: "0" },
+            hidden: { opacity: 0, y: "100%" },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Header style={{ backgroundColor: "black" }}>
             <h2>Quizes da Galera</h2>
           </Widget.Header>
           <Widget.Content>
             <ul>
-              {db.external.map((linkExterno, index) => {
+              {db.external.map((linkExterno) => {
                 const [projectName, githubUser] = linkExterno
-                .replace(/\//g, '')
-                .replace('https:', '')
-                .replace('vercel.app', '')
-                .split('.');
+                  .replace(/\//g, "")
+                  .replace("https:", "")
+                  .replace("vercel.app", "")
+                  .split(".");
                 return (
-                  <li key={index}>
-                    <Widget.Topic href={linkExterno}>
+                  <li key={linkExterno}>
+                    <Widget.Topic
+                      as={Link}
+                      href={`/quiz/${projectName}___${githubUser}`}
+                    >
                       {`${githubUser}/${projectName}`}
                     </Widget.Topic>
                   </li>
@@ -71,7 +105,16 @@ export default function Home() {
             </ul>
           </Widget.Content>
         </Widget>
-        <Footer />
+        <Footer
+          as={motion.footer}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, x: "0" },
+            hidden: { opacity: 0, x: "-100%" },
+          }}
+          initial="hidden"
+          animate="show"
+        />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/thiagonmiziara" />
     </QuizBackground>

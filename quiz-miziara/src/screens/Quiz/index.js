@@ -1,17 +1,17 @@
 import React from "react";
-import db from "../db.json";
-import Widget from "../src/components/Widget";
-import QuizLogo from "../src/components/QuizLogo";
-import QuizBackground from "../src/components/QuizBackground";
-import QuizContainer from "../src/components/QuizContainer";
-import Button from "../src/components/Button";
-import AlternativesForm from "../src/components/AlternativesForm";
+import Widget from "../../components/Widget";
+import QuizLogo from "../../components/QuizLogo";
+import QuizBackground from "../../components/QuizBackground";
+import QuizContainer from "../../components/QuizContainer";
+import Button from "../../components/Button";
+import AlternativesForm from "../../components/AlternativesForm";
+import BackLinkArrow from "../../components/BackLinkArrow";
 
 function ResultWidget({ results }) {
   return (
     <Widget>
       <Widget.Header>
-        <h1> Batman Quiz! </h1>
+        <h1> Resultado </h1>
       </Widget.Header>
       <Widget.Content>
         <p>
@@ -43,7 +43,7 @@ function LoadingWidget() {
   return (
     <Widget>
       <Widget.Header>
-        <h1> Batman Quiz! </h1>
+        <h1>Quiz da Galera!</h1>
       </Widget.Header>
       <Widget.Content>
         <img
@@ -74,6 +74,7 @@ function QuestionWidget({
   return (
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href="/" />
         <h3> {`Pergunta ${questionIndex + 1} de ${totalQuestions}`} </h3>
       </Widget.Header>
       <img
@@ -126,8 +127,30 @@ function QuestionWidget({
             {" "}
             Confirmar{" "}
           </Button>
-          {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
-          {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
+          {isQuestionSubmited && isCorrect && (
+            <p
+              style={{
+                fontSize: "1rem",
+                color: "green",
+                fontWeight: "bold",
+                textAlign: "center",
+              }}
+            >
+              Parabéns Você Acertou!
+            </p>
+          )}
+          {isQuestionSubmited && !isCorrect && (
+            <p
+              style={{
+                fontSize: "1rem",
+                color: "red",
+                fontWeight: "bold",
+                textAlign: "center",
+              }}
+            >
+              Que Pena Você errou!
+            </p>
+          )}
         </AlternativesForm>
       </Widget.Content>
     </Widget>
@@ -140,13 +163,14 @@ const screenStates = {
   RESULT: "RESULT",
 };
 
-export default function QuizPage() {
+export default function QuizPage({ externalQuestions, externalBg }) {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const [results, setResults] = React.useState([]);
-  const totalQuestions = db.questions.length;
+  const totalQuestions = externalQuestions.length;
   const questionIndex = currentQuestion;
-  const question = db.questions[questionIndex];
+  const question = externalQuestions[questionIndex];
+  const bg = externalBg;
 
   function addResult(result) {
     setResults([...results, result]);
@@ -169,9 +193,20 @@ export default function QuizPage() {
   }
 
   return (
-    <QuizBackground backgroundImage={"https://cdn.wallpapersafari.com/65/15/XJmMES.jpg"}>
+    <QuizBackground backgroundImage={bg}>
       <QuizContainer>
-        <QuizLogo />
+        <QuizLogo
+          src={db.logo}
+          as={motion.img}
+          initial={{ scale: 0 }}
+          animate={{ rotate: 360, scale: 1.1 }}
+          transition={{
+            delay: 0.2,
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+          }}
+        />
         {screenState === screenStates.QUIZ && (
           <QuestionWidget
             question={question}

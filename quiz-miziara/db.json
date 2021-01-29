@@ -1,6 +1,7 @@
 {
     "bg": "https://i.pinimg.com/originals/ea/b8/60/eab86087ac627e9af69fa8f4da16792a.jpg",
     "title": "Miziara Quiz",
+    "logo": "https://www.pngkey.com/png/full/331-3318268_here-you-will-find-two-logos-batman-and.png",
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [{
             "image": "https://media2.giphy.com/media/BnK7qt0oUl5zq/giphy.gif",
@@ -128,7 +129,9 @@
     ],
     "external": [
         "https://breaking-bad-quiz.eliasnepo.vercel.app/",
-        "https://chessquiz-alura.leo0liveira.vercel.app/"
+        "https://chessquiz-alura.leo0liveira.vercel.app/",
+        "https://typequiz.caducarvalho.vercel.app/",
+        "https://harry-potter-quiz.lucianoweslen11.vercel.app/"
     ],
     "theme": {
         "colors": {
