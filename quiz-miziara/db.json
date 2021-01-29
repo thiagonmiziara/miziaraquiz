@@ -127,7 +127,8 @@
 
     ],
     "external": [
-        ""
+        "https://breaking-bad-quiz.eliasnepo.vercel.app/",
+        "https://chessquiz-alura.leo0liveira.vercel.app/"
     ],
     "theme": {
         "colors": {
