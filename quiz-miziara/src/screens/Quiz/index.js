@@ -7,6 +7,7 @@ import QuizContainer from "../../components/QuizContainer";
 import Button from "../../components/Button";
 import AlternativesForm from "../../components/AlternativesForm";
 import BackLinkArrow from "../../components/BackLinkArrow";
+import Link from "../../components/Link";
 
 function ResultWidget({ results }) {
   return (
